@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.34729.46
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoomCraft", "RoomCraft\RoomCraft.csproj", "{39AC6506-0BC8-4BBD-B0A6-5923DA5AF166}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{39AC6506-0BC8-4BBD-B0A6-5923DA5AF166}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39AC6506-0BC8-4BBD-B0A6-5923DA5AF166}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39AC6506-0BC8-4BBD-B0A6-5923DA5AF166}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39AC6506-0BC8-4BBD-B0A6-5923DA5AF166}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EAFF8D76-C60E-40BE-AAB5-52FFBDAA4C72}
+	EndGlobalSection
+EndGlobal
