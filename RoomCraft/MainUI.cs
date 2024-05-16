@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 using MaterialSkin;
+using System.Threading;
 
 namespace RoomCraft
 {
@@ -18,23 +19,63 @@ namespace RoomCraft
 
         public MainUI()
         {
-            
-
             InitializeComponent();
 
-            var materialSkinManager = MaterialSkinManager.Instance;
-
+            materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.EnforceBackcolorOnAllComponents = false;
             materialSkinManager.AddFormToManage(this);
+
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
-
-            //BtnStart1.Font = new Font(BtnStart1.Font.FontFamily, 55);
-
         }
+
+        
+        private void BtnStart1_Click_1(object sender, EventArgs e)
+        {
+            StartUI startUI = new StartUI();
+
+            // 현재 폼 닫음
+
+            startUI.Show();
+            //this.Close();
+        }
+
+
+        #region Exit Process
 
         private void BtnExit1_Click(object sender, EventArgs e)
         {
-
+            ExitConfirmation();
         }
+
+        private void MainUI_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            // 사용자가 X 버튼을 클릭했을 때만 확인 대화상자 표시
+            if (e.CloseReason == CloseReason.UserClosing)
+            {
+                ExitConfirmation(e);
+            }
+        }
+
+        private void ExitConfirmation(FormClosingEventArgs e = null)
+        {
+            DialogResult result = MessageBox.Show("Do you want to exit?", "Exit Confirmation", MessageBoxButtons.OKCancel);
+
+            // 사용자가 확인을 선택하지 않은 경우 종료를 취소
+            if (result != DialogResult.OK) // 확인이 아니면
+            {
+                if (e != null)
+                {
+                    e.Cancel = true;
+                }
+            }
+            else // 확인이면
+            {
+                Application.Exit();
+            }
+        }
+
+        #endregion Exit Process
+
     }
 }
