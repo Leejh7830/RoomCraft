@@ -16,6 +16,7 @@ namespace RoomCraft
     public partial class MainUI : MaterialForm
     {
         private readonly MaterialSkinManager materialSkinManager = null;
+        private StartUI startUI;
 
         public MainUI()
         {
@@ -29,16 +30,25 @@ namespace RoomCraft
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.BlueGrey900, Primary.BlueGrey500, Accent.LightBlue200, TextShade.WHITE);
         }
 
-        
+
         private void BtnStart1_Click_1(object sender, EventArgs e)
         {
             StartUI startUI = new StartUI();
 
-            // 현재 폼 닫음
+            this.Hide();
 
+            startUI.FormClosed += StartUI_FormClosed; // 새로 열린 폼이 닫힐 때 이벤트를 처리하는 핸들러를 등록
             startUI.Show();
-            //this.Close();
+
         }
+
+        private void StartUI_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            this.Show(); // = MainUI 폼
+        }
+
+
+
 
 
         #region Exit Process

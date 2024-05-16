@@ -17,5 +17,10 @@ namespace RoomCraft
         {
             InitializeComponent();
         }
+
+        private void BtnBack1_Click(object sender, EventArgs e)
+        {
+            this.Close(); // StartUI폼 닫으면 MainUI폼 활성화
+        }
     }
 }
