@@ -13,6 +13,8 @@ namespace RoomCraft
 {
     public partial class StartUI : MaterialForm
     {
+        Utility util = new Utility();
+
         public StartUI()
         {
             InitializeComponent();
