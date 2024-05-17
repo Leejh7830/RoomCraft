@@ -17,10 +17,21 @@ namespace RoomCraft
         {
             InitializeComponent();
         }
-
+        
+        // (BTN) Bact To Main
         private void BtnBack1_Click(object sender, EventArgs e)
         {
             this.Close(); // StartUI폼 닫으면 MainUI폼 활성화
+        }
+
+        // (BTN) Create
+        private void BtnCreate1_Click(object sender, EventArgs e)
+        {
+            // 새로운 방 크기 선택 폼 생성
+            RoomSizeSelectionForm roomSizeSelectionForm = new RoomSizeSelectionForm();
+
+            // 방 크기 선택 폼을 모달로 띄움
+            roomSizeSelectionForm.ShowDialog();
         }
     }
 }

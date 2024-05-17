@@ -34,6 +34,8 @@ namespace RoomCraft
             this.BtnLoad1 = new MaterialSkin.Controls.MaterialButton();
             this.BtnOption1 = new MaterialSkin.Controls.MaterialButton();
             this.materialButton3 = new MaterialSkin.Controls.MaterialButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // BtnBack1
@@ -45,7 +47,7 @@ namespace RoomCraft
             this.BtnBack1.Font = new System.Drawing.Font("굴림", 35F);
             this.BtnBack1.HighEmphasis = true;
             this.BtnBack1.Icon = null;
-            this.BtnBack1.Location = new System.Drawing.Point(7, 384);
+            this.BtnBack1.Location = new System.Drawing.Point(7, 402);
             this.BtnBack1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnBack1.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnBack1.Name = "BtnBack1";
@@ -67,7 +69,7 @@ namespace RoomCraft
             this.BtnCreate1.Font = new System.Drawing.Font("굴림", 35F);
             this.BtnCreate1.HighEmphasis = true;
             this.BtnCreate1.Icon = null;
-            this.BtnCreate1.Location = new System.Drawing.Point(7, 70);
+            this.BtnCreate1.Location = new System.Drawing.Point(7, 88);
             this.BtnCreate1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnCreate1.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnCreate1.Name = "BtnCreate1";
@@ -78,6 +80,7 @@ namespace RoomCraft
             this.BtnCreate1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.BtnCreate1.UseAccentColor = false;
             this.BtnCreate1.UseVisualStyleBackColor = true;
+            this.BtnCreate1.Click += new System.EventHandler(this.BtnCreate1_Click);
             // 
             // BtnLoad1
             // 
@@ -88,7 +91,7 @@ namespace RoomCraft
             this.BtnLoad1.Font = new System.Drawing.Font("굴림", 35F);
             this.BtnLoad1.HighEmphasis = true;
             this.BtnLoad1.Icon = null;
-            this.BtnLoad1.Location = new System.Drawing.Point(7, 139);
+            this.BtnLoad1.Location = new System.Drawing.Point(7, 157);
             this.BtnLoad1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnLoad1.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnLoad1.Name = "BtnLoad1";
@@ -109,7 +112,7 @@ namespace RoomCraft
             this.BtnOption1.Font = new System.Drawing.Font("굴림", 35F);
             this.BtnOption1.HighEmphasis = true;
             this.BtnOption1.Icon = null;
-            this.BtnOption1.Location = new System.Drawing.Point(7, 208);
+            this.BtnOption1.Location = new System.Drawing.Point(7, 226);
             this.BtnOption1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.BtnOption1.MouseState = MaterialSkin.MouseState.HOVER;
             this.BtnOption1.Name = "BtnOption1";
@@ -130,7 +133,7 @@ namespace RoomCraft
             this.materialButton3.Font = new System.Drawing.Font("굴림", 35F);
             this.materialButton3.HighEmphasis = true;
             this.materialButton3.Icon = null;
-            this.materialButton3.Location = new System.Drawing.Point(7, 277);
+            this.materialButton3.Location = new System.Drawing.Point(7, 295);
             this.materialButton3.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.materialButton3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialButton3.Name = "materialButton3";
@@ -142,18 +145,30 @@ namespace RoomCraft
             this.materialButton3.UseAccentColor = false;
             this.materialButton3.UseVisualStyleBackColor = true;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::RoomCraft.Properties.Resources.StartUI1;
+            this.pictureBox1.Location = new System.Drawing.Point(-2, 80);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(801, 389);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 6;
+            this.pictureBox1.TabStop = false;
+            // 
             // StartUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 470);
             this.Controls.Add(this.materialButton3);
             this.Controls.Add(this.BtnOption1);
             this.Controls.Add(this.BtnLoad1);
             this.Controls.Add(this.BtnCreate1);
             this.Controls.Add(this.BtnBack1);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "StartUI";
             this.Text = "RoomCraft";
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -165,5 +180,6 @@ namespace RoomCraft
         private MaterialSkin.Controls.MaterialButton BtnLoad1;
         private MaterialSkin.Controls.MaterialButton BtnOption1;
         private MaterialSkin.Controls.MaterialButton materialButton3;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

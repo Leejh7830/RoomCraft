@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="RoomSizeSelectionForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomSizeSelectionForm.Designer.cs">
+      <DependentUpon>RoomSizeSelectionForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,6 +105,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Images\Main2.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Images\StartUI.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
