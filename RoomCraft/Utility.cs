@@ -15,6 +15,7 @@ namespace RoomCraft
             Point originalLocation = originForm.Location;
             newForm.StartPosition = FormStartPosition.Manual;
             newForm.Location = originalLocation;
+
         }
     }
 }
