@@ -16,6 +16,7 @@ namespace RoomCraft
             newForm.StartPosition = FormStartPosition.Manual;
             newForm.Location = originalLocation;
 
+
         }
     }
 }
