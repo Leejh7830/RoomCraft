@@ -17,7 +17,7 @@ namespace RoomCraft
     {
         Utility util = new Utility();
         private readonly MaterialSkinManager materialSkinManager = null;
-
+        
         public MainUI()
         {
             InitializeComponent();
