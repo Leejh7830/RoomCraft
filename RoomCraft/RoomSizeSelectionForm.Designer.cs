@@ -37,8 +37,6 @@ namespace RoomCraft
             this.smallRectRoomRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             this.mediumRectRoomRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
             this.largeRectRoomRadioButton = new MaterialSkin.Controls.MaterialRadioButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnOK1
@@ -49,7 +47,7 @@ namespace RoomCraft
             this.btnOK1.Depth = 0;
             this.btnOK1.HighEmphasis = true;
             this.btnOK1.Icon = null;
-            this.btnOK1.Location = new System.Drawing.Point(385, 333);
+            this.btnOK1.Location = new System.Drawing.Point(443, 313);
             this.btnOK1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnOK1.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnOK1.Name = "btnOK1";
@@ -70,7 +68,7 @@ namespace RoomCraft
             this.btnCancel1.Depth = 0;
             this.btnCancel1.HighEmphasis = true;
             this.btnCancel1.Icon = null;
-            this.btnCancel1.Location = new System.Drawing.Point(495, 333);
+            this.btnCancel1.Location = new System.Drawing.Point(553, 313);
             this.btnCancel1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCancel1.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancel1.Name = "btnCancel1";
@@ -98,6 +96,7 @@ namespace RoomCraft
             this.smallRoomRadioButton.TabStop = true;
             this.smallRoomRadioButton.Text = "materialRadioButton1";
             this.smallRoomRadioButton.UseVisualStyleBackColor = true;
+            this.smallRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // mediumRoomRadioButton
             // 
@@ -114,6 +113,7 @@ namespace RoomCraft
             this.mediumRoomRadioButton.TabStop = true;
             this.mediumRoomRadioButton.Text = "materialRadioButton2";
             this.mediumRoomRadioButton.UseVisualStyleBackColor = true;
+            this.mediumRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // largeRoomRadioButton
             // 
@@ -130,6 +130,7 @@ namespace RoomCraft
             this.largeRoomRadioButton.TabStop = true;
             this.largeRoomRadioButton.Text = "materialRadioButton3";
             this.largeRoomRadioButton.UseVisualStyleBackColor = true;
+            this.largeRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // smallRectRoomRadioButton
             // 
@@ -146,6 +147,7 @@ namespace RoomCraft
             this.smallRectRoomRadioButton.TabStop = true;
             this.smallRectRoomRadioButton.Text = "materialRadioButton1";
             this.smallRectRoomRadioButton.UseVisualStyleBackColor = true;
+            this.smallRectRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // mediumRectRoomRadioButton
             // 
@@ -162,6 +164,7 @@ namespace RoomCraft
             this.mediumRectRoomRadioButton.TabStop = true;
             this.mediumRectRoomRadioButton.Text = "materialRadioButton2";
             this.mediumRectRoomRadioButton.UseVisualStyleBackColor = true;
+            this.mediumRectRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // largeRectRoomRadioButton
             // 
@@ -178,28 +181,13 @@ namespace RoomCraft
             this.largeRectRoomRadioButton.TabStop = true;
             this.largeRectRoomRadioButton.Text = "materialRadioButton3";
             this.largeRectRoomRadioButton.UseVisualStyleBackColor = true;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(27, 254);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(95, 25);
-            this.textBox1.TabIndex = 8;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(154, 254);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(95, 25);
-            this.textBox2.TabIndex = 9;
+            this.largeRectRoomRadioButton.Click += new System.EventHandler(this.RadioButton_Click);
             // 
             // RoomSizeSelectionForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(617, 403);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(664, 381);
             this.Controls.Add(this.largeRectRoomRadioButton);
             this.Controls.Add(this.mediumRectRoomRadioButton);
             this.Controls.Add(this.smallRectRoomRadioButton);
@@ -225,7 +213,5 @@ namespace RoomCraft
         private MaterialSkin.Controls.MaterialRadioButton smallRectRoomRadioButton;
         private MaterialSkin.Controls.MaterialRadioButton mediumRectRoomRadioButton;
         private MaterialSkin.Controls.MaterialRadioButton largeRectRoomRadioButton;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
     }
 }
