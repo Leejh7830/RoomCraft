@@ -196,7 +196,7 @@ namespace RoomCraft
             this.widthTextBox.Depth = 0;
             this.widthTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.widthTextBox.LeadingIcon = null;
-            this.widthTextBox.Location = new System.Drawing.Point(102, 251);
+            this.widthTextBox.Location = new System.Drawing.Point(102, 264);
             this.widthTextBox.MaxLength = 50;
             this.widthTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.widthTextBox.Multiline = false;
@@ -213,7 +213,7 @@ namespace RoomCraft
             this.heightTextBox.Depth = 0;
             this.heightTextBox.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.heightTextBox.LeadingIcon = null;
-            this.heightTextBox.Location = new System.Drawing.Point(274, 251);
+            this.heightTextBox.Location = new System.Drawing.Point(274, 264);
             this.heightTextBox.MaxLength = 50;
             this.heightTextBox.MouseState = MaterialSkin.MouseState.OUT;
             this.heightTextBox.Multiline = false;
@@ -228,7 +228,7 @@ namespace RoomCraft
             this.widthLabel.AutoSize = true;
             this.widthLabel.Depth = 0;
             this.widthLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.widthLabel.Location = new System.Drawing.Point(54, 266);
+            this.widthLabel.Location = new System.Drawing.Point(54, 279);
             this.widthLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.widthLabel.Name = "widthLabel";
             this.widthLabel.Size = new System.Drawing.Size(42, 19);
@@ -240,7 +240,7 @@ namespace RoomCraft
             this.heightLabel.AutoSize = true;
             this.heightLabel.Depth = 0;
             this.heightLabel.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.heightLabel.Location = new System.Drawing.Point(221, 266);
+            this.heightLabel.Location = new System.Drawing.Point(221, 279);
             this.heightLabel.MouseState = MaterialSkin.MouseState.HOVER;
             this.heightLabel.Name = "heightLabel";
             this.heightLabel.Size = new System.Drawing.Size(47, 19);
@@ -276,7 +276,7 @@ namespace RoomCraft
             this.btnApply.Depth = 0;
             this.btnApply.HighEmphasis = true;
             this.btnApply.Icon = null;
-            this.btnApply.Location = new System.Drawing.Point(382, 257);
+            this.btnApply.Location = new System.Drawing.Point(382, 270);
             this.btnApply.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnApply.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnApply.Name = "btnApply";
@@ -293,7 +293,7 @@ namespace RoomCraft
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(657, 401);
+            this.ClientSize = new System.Drawing.Size(650, 350);
             this.Controls.Add(this.btnApply);
             this.Controls.Add(this.btnReset1);
             this.Controls.Add(this.heightLabel);
@@ -309,7 +309,6 @@ namespace RoomCraft
             this.Controls.Add(this.btnCancel1);
             this.Controls.Add(this.btnOK1);
             this.Name = "RoomSizeSelectionForm";
-            this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
 

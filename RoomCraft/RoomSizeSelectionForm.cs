@@ -103,9 +103,25 @@ namespace RoomCraft
         // (BTN) OK
         private void btnOK1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("다음 단계로 이동합니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            bool isRadioButtonChecked = smallRoomRadioButton.Checked || mediumRoomRadioButton.Checked || largeRoomRadioButton.Checked ||
+                                        smallRectRoomRadioButton.Checked || mediumRectRoomRadioButton.Checked || largeRectRoomRadioButton.Checked;
 
+            bool isWidthTextBoxFilled = !string.IsNullOrWhiteSpace(widthTextBox.Text);
+            bool isHeightTextBoxFilled = !string.IsNullOrWhiteSpace(heightTextBox.Text);
 
+            // 아무 것도 선택하지 않은 경우
+            if (!isRadioButtonChecked && (!isWidthTextBoxFilled || !isHeightTextBoxFilled))
+            {
+                MessageBox.Show("방 크기를 선택하거나 직접 입력하세요.", "경고", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            DialogResult result = MessageBox.Show("현재 방 사이즈로 진행합니다.", "확인", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+
+            if (result == DialogResult.OK)
+            {
+                MessageBox.Show("다음 단계로 이동합니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         // (BTN) Cancel
@@ -133,7 +149,7 @@ namespace RoomCraft
             lastCheckedRadioButton = null;
 
             // 폼의 크기를 기본 크기로 설정
-            this.Size = new System.Drawing.Size(800, 600);
+            this.Size = new System.Drawing.Size(650, 350);
         }
 
     }
