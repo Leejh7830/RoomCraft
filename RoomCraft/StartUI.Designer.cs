@@ -148,7 +148,7 @@ namespace RoomCraft
             // pictureBox1
             // 
             this.pictureBox1.Image = global::RoomCraft.Properties.Resources.StartUI1;
-            this.pictureBox1.Location = new System.Drawing.Point(-2, 80);
+            this.pictureBox1.Location = new System.Drawing.Point(-1, 80);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(801, 389);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
