@@ -13,8 +13,6 @@ namespace RoomCraft
 {
     public partial class StartUI : MaterialForm
     {
-        Utility util = new Utility();
-
         public StartUI()
         {
             InitializeComponent();
@@ -32,7 +30,7 @@ namespace RoomCraft
             // 새로운 방 크기 선택 폼 생성
             RoomSizeSelectionForm roomSizeSelectionForm = new RoomSizeSelectionForm();
 
-            util.SetFormStartPosition(this, roomSizeSelectionForm);
+            Util.SetFormStartPosition(this, roomSizeSelectionForm);
 
             // 방 크기 선택 폼을 모달로 띄움
             roomSizeSelectionForm.ShowDialog();

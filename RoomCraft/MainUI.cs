@@ -15,7 +15,6 @@ namespace RoomCraft
 {
     public partial class MainUI : MaterialForm
     {
-        Utility util = new Utility();
         private readonly MaterialSkinManager materialSkinManager = null;
         
         public MainUI()
@@ -38,10 +37,7 @@ namespace RoomCraft
             this.Hide();
 
             // 같은 위치에 폼 생성
-            //Point originalLocation = this.Location;
-            //startUI.StartPosition = FormStartPosition.Manual;
-            //startUI.Location = originalLocation;
-            util.SetFormStartPosition(this, startUI);
+            Util.SetFormStartPosition(this, startUI);
 
             // 새로 열린 폼이 닫힐 때 이벤트를 처리하는 핸들러를 등록
             startUI.FormClosed += StartUI_FormClosed; 
