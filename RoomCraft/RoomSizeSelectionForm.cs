@@ -122,7 +122,7 @@ namespace RoomCraft
             {
                 MessageBox.Show("다음 단계로 이동합니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-        }
+        } 
 
         // (BTN) Cancel
         private void btnCancel1_Click(object sender, EventArgs e)
