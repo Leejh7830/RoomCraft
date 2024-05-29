@@ -50,6 +50,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FurnitureForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FurnitureForm.Designer.cs">
+      <DependentUpon>FurnitureForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomSizeSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>

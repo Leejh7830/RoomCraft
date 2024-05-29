@@ -13,8 +13,9 @@ namespace RoomCraft
 {
     public partial class RoomSizeSelectionForm : MaterialForm
     {
-
+        // Utility util = new Utility();
         private MaterialRadioButton lastCheckedRadioButton;
+        private FurnitureForm furnitureForm;
 
         public RoomSizeSelectionForm()
         {
@@ -120,9 +121,27 @@ namespace RoomCraft
 
             if (result == DialogResult.OK)
             {
-                MessageBox.Show("다음 단계로 이동합니다.", "확인", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Util.HideAllControls(this);
+
+                // 새로운 폼 생성 및 부모-자식 관계 설정
+                furnitureForm = new FurnitureForm();
+                furnitureForm.StartPosition = FormStartPosition.Manual;
+                furnitureForm.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+                furnitureForm.Show(this);
+
+                // 폼 이동 이벤트 핸들러 설정
+                Util.SyncChildFormPosition(this, furnitureForm);
             }
-        } 
+        }
+
+        // 부모 폼이 이동할 때 자식 폼도 함께 이동하도록 설정
+        private void MainForm_LocationChanged(object sender, EventArgs e)
+        {
+            if (furnitureForm != null)
+            {
+                furnitureForm.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+            }
+        }
 
         // (BTN) Cancel
         private void btnCancel1_Click(object sender, EventArgs e)
@@ -150,6 +169,25 @@ namespace RoomCraft
 
             // 폼의 크기를 기본 크기로 설정
             this.Size = new System.Drawing.Size(650, 350);
+        }
+
+        private void btnFurniture_Click(object sender, EventArgs e)
+        {
+            FurnitureForm furnitureSelectionForm = new FurnitureForm();
+            furnitureSelectionForm.FurnitureSelected += (furniture) =>
+            {
+                // 선택된 가구를 방에 추가하는 로직 구현
+                AddFurnitureToRoom(furniture);
+            };
+
+            Util.SetFormStartPosition(this, furnitureSelectionForm);
+            furnitureSelectionForm.ShowDialog();
+        }
+
+        private void AddFurnitureToRoom(string furniture)
+        {
+            // 가구를 방에 추가하는 로직
+            MessageBox.Show($"{furniture} added to the room", "Furniture Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
