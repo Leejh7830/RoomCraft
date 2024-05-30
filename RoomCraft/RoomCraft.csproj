@@ -56,6 +56,12 @@
     <Compile Include="FurnitureForm.Designer.cs">
       <DependentUpon>FurnitureForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PlacementForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PlacementForm.Designer.cs">
+      <DependentUpon>PlacementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="RoomSizeSelectionForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,6 +85,9 @@
     <Compile Include="Utility.cs" />
     <EmbeddedResource Include="MainUI.resx">
       <DependentUpon>MainUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PlacementForm.resx">
+      <DependentUpon>PlacementForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

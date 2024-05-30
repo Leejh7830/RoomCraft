@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
 
@@ -18,14 +19,30 @@ namespace RoomCraft
 
         private void btnAddChair_Click(object sender, EventArgs e)
         {
-            FurnitureSelected?.Invoke("Chair");
-            this.Close();
+            OpenFurnitureDialog(@"..\..\Resources\Images\Chair");
         }
 
         private void btnAddTable_Click(object sender, EventArgs e)
         {
-            FurnitureSelected?.Invoke("Table");
-            this.Close();
+            OpenFurnitureDialog(@"..\..\Resources\Images\Table");
+        }
+
+        private void OpenFurnitureDialog(string relativePath)
+        {
+            string initialDirectory = Path.GetFullPath(relativePath);
+
+            using (OpenFileDialog openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.InitialDirectory = initialDirectory;
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp";
+                openFileDialog.RestoreDirectory = true;
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string selectedImagePath = openFileDialog.FileName;
+                    FurnitureSelected?.Invoke(selectedImagePath);
+                }
+            }
         }
     }
 }

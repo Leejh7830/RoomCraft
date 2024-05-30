@@ -13,9 +13,8 @@ namespace RoomCraft
 {
     public partial class RoomSizeSelectionForm : MaterialForm
     {
-        // Utility util = new Utility();
         private MaterialRadioButton lastCheckedRadioButton;
-        private FurnitureForm furnitureForm;
+        private PlacementForm placementForm;
 
         public RoomSizeSelectionForm()
         {
@@ -25,7 +24,7 @@ namespace RoomCraft
             this.ControlBox = false;
 
             // 폼의 최소 크기 설정
-            this.MinimumSize = new System.Drawing.Size(400, 300);
+            this.MinimumSize = new Size(400, 300);
         }
 
         // RadioButton 클릭 이벤트 핸들러
@@ -55,27 +54,27 @@ namespace RoomCraft
         {
             if (smallRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(630, 630);
+                this.Size = new Size(630, 630);
             }
             else if (mediumRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(726, 726);
+                this.Size = new Size(726, 726);
             }
             else if (largeRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(812, 812);
+                this.Size = new Size(812, 812);
             }
             else if (smallRectRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(800, 495);
+                this.Size = new Size(800, 495);
             }
             else if (mediumRectRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(916, 576);
+                this.Size = new Size(916, 576);
             }
             else if (largeRectRoomRadioButton.Checked)
             {
-                this.Size = new System.Drawing.Size(1000, 660);
+                this.Size = new Size(1000, 660);
             }
         }
 
@@ -88,7 +87,7 @@ namespace RoomCraft
                 // 최소값과 최대값 제한 (예: 최소 100px, 최대 2000px)
                 if (width >= 100 && width <= 2000 && height >= 100 && height <= 2000)
                 {
-                    this.Size = new System.Drawing.Size(width, height);
+                    this.Size = new Size(width, height);
                 }
                 else
                 {
@@ -121,25 +120,11 @@ namespace RoomCraft
 
             if (result == DialogResult.OK)
             {
-                Util.HideAllControls(this);
+                placementForm = new PlacementForm();
+                Util.SetFormStartPosition(this, placementForm);
+                placementForm.Show();
 
-                // 새로운 폼 생성 및 부모-자식 관계 설정
-                furnitureForm = new FurnitureForm();
-                furnitureForm.StartPosition = FormStartPosition.Manual;
-                furnitureForm.Location = new Point(this.Location.X + this.Width, this.Location.Y);
-                furnitureForm.Show(this);
-
-                // 폼 이동 이벤트 핸들러 설정
-                Util.SyncChildFormPosition(this, furnitureForm);
-            }
-        }
-
-        // 부모 폼이 이동할 때 자식 폼도 함께 이동하도록 설정
-        private void MainForm_LocationChanged(object sender, EventArgs e)
-        {
-            if (furnitureForm != null)
-            {
-                furnitureForm.Location = new Point(this.Location.X + this.Width, this.Location.Y);
+                this.Close();
             }
         }
 
@@ -168,7 +153,7 @@ namespace RoomCraft
             lastCheckedRadioButton = null;
 
             // 폼의 크기를 기본 크기로 설정
-            this.Size = new System.Drawing.Size(650, 350);
+            this.Size = new Size(650, 350);
         }
 
         private void btnFurniture_Click(object sender, EventArgs e)
