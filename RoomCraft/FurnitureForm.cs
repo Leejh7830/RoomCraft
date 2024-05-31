@@ -15,6 +15,7 @@ namespace RoomCraft
 
             // 최소화, 최대화, 닫기 버튼 숨기기
             this.ControlBox = false;
+            this.TopMost = true;
         }
 
         private void btnAddChair_Click(object sender, EventArgs e)

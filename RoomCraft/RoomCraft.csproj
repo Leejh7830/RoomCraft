@@ -68,6 +68,12 @@
     <Compile Include="RoomSizeSelectionForm.Designer.cs">
       <DependentUpon>RoomSizeSelectionForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShapeControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ShapeControl.Designer.cs">
+      <DependentUpon>ShapeControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="StartUI.cs">
       <SubType>Form</SubType>
     </Compile>
