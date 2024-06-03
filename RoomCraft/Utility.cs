@@ -9,7 +9,7 @@ using System.Windows.Forms;
 namespace RoomCraft
 {
     public static class Util
-    {
+    { 
         // 새로 열리는 폼이 기존 폼의 위치에 열리도록
         public static void SetFormStartPosition(Form originForm, Form newForm)
         {
