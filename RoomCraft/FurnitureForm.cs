@@ -17,7 +17,7 @@ namespace RoomCraft
             this.ControlBox = false;
             this.TopMost = true;
         }
-
+         
         private void btnAddChair_Click(object sender, EventArgs e)
         {
             OpenFurnitureDialog(@"..\..\Resources\Images\Chair");
