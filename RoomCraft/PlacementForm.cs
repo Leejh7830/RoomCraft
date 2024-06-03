@@ -8,6 +8,10 @@ namespace RoomCraft
     {
         private Point mouseDownLocation;
         private FurnitureForm furnitureForm;
+        private Control selectedControl;
+        private bool isResizing = false;
+        private string resizeDirection;
+        private const int resizeHandleSize = 10;
 
         public PlacementForm()
         {
@@ -19,13 +23,41 @@ namespace RoomCraft
         {
 
             furnitureForm = new FurnitureForm();
+            Util.SetFormRightPosition(this, furnitureForm);
             furnitureForm.FurnitureSelected += OnFurnitureSelected;
-            Util.SetFormStartPosition(this, furnitureForm);
             furnitureForm.Show(this);
 
             // 부모-자식 폼 위치 동기화
             Util.SyncChildFormPosition(this, furnitureForm);
+
+            // ContextMenuStrip 초기화 및 설정
+            // InitializeContextMenu();
         }
+
+        private void InitializeContextMenu()
+        {
+            contextMenu = new ContextMenuStrip();
+            var changeColorMenuItem = new ToolStripMenuItem("Change Color");
+
+            changeColorMenuItem.Click += ChangeColorMenuItem_Click;
+
+            contextMenu.Items.Add(changeColorMenuItem);
+        }
+
+        private void ChangeColorMenuItem_Click(object sender, EventArgs e)
+        {
+            if (selectedControl != null)
+            {
+                using (ColorDialog colorDialog = new ColorDialog())
+                {
+                    if (colorDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        OnColorChanged(colorDialog.Color);
+                    }
+                }
+            }
+        }
+
 
         /*
         private void AddShapeButtons()
@@ -80,31 +112,110 @@ namespace RoomCraft
             furniture.MouseDown += Control_MouseDown;
             furniture.MouseMove += Control_MouseMove;
             furniture.MouseUp += Control_MouseUp;
+            furniture.MouseClick += Control_MouseClick;
+            furniture.Paint += Control_Paint;
 
             this.Controls.Add(furniture);
+        }
+
+        private void OnColorChanged(Color color)
+        {
+            if (selectedControl != null && selectedControl is PictureBox pictureBox)
+            {
+                Bitmap bmp = new Bitmap(pictureBox.Image);
+                for (int y = 0; y < bmp.Height; y++)
+                {
+                    for (int x = 0; x < bmp.Width; x++)
+                    {
+                        Color pixelColor = bmp.GetPixel(x, y);
+                        if (pixelColor.A > 0) // Skip transparent pixels
+                        {
+                            bmp.SetPixel(x, y, color);
+                        }
+                    }
+                }
+                pictureBox.Image = bmp;
+            }
+        }
+
+        private void OnSizeChanged(int width, int height)
+        {
+            if (selectedControl != null)
+            {
+                selectedControl.Size = new Size(width, height);
+                selectedControl.Invalidate();
+            }
+        }
+
+        private void Control_MouseClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Right)
+            {
+                selectedControl = sender as Control;
+                contextMenu.Show(Cursor.Position);
+            }
         }
 
         private void Control_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
             {
-                mouseDownLocation = e.Location;
+                selectedControl = sender as Control;
+                if (IsInResizeZone(selectedControl, e.Location))
+                {
+                    isResizing = true;
+                }
+                else
+                {
+                    mouseDownLocation = e.Location;
+                }
             }
         }
 
         private void Control_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.Button == MouseButtons.Left)
+            Control control = sender as Control;
+            if (isResizing)
             {
-                Control control = sender as Control;
+                control.Width = e.X;
+                control.Height = e.Y;
+                control.Invalidate();
+            }
+            else if (e.Button == MouseButtons.Left)
+            {
                 control.Left = e.X + control.Left - mouseDownLocation.X;
                 control.Top = e.Y + control.Top - mouseDownLocation.Y;
+            }
+            else
+            {
+                if (IsInResizeZone(control, e.Location))
+                {
+                    control.Cursor = Cursors.SizeNWSE;
+                }
+                else
+                {
+                    control.Cursor = Cursors.Hand;
+                }
             }
         }
 
         private void Control_MouseUp(object sender, MouseEventArgs e)
         {
-            // 필요시 추가 작업을 여기에 작성
+            isResizing = false;
+        }
+
+        private void Control_Paint(object sender, PaintEventArgs e)
+        {
+            Control control = sender as Control;
+            using (Brush brush = new SolidBrush(Color.Black))
+            {
+                e.Graphics.FillRectangle(brush, new Rectangle(control.Width - resizeHandleSize, control.Height - resizeHandleSize, resizeHandleSize, resizeHandleSize));
+            }
+        }
+
+        private bool IsInResizeZone(Control control, Point point)
+        {
+            return point.X >= control.Width - resizeHandleSize && point.Y >= control.Height - resizeHandleSize;
         }
     }
 }

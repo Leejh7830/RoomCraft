@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
 using MaterialSkin.Controls;
@@ -8,6 +9,7 @@ namespace RoomCraft
     public partial class FurnitureForm : MaterialForm
     {
         public event Action<string> FurnitureSelected;
+        public event Action<Color> ColorChanged;
 
         public FurnitureForm()
         {
