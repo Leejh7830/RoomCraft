@@ -55,7 +55,7 @@ namespace RoomCraft
                         OnColorChanged(colorDialog.Color);
                     }
                 }
-            }
+            } 
         }
          
 
