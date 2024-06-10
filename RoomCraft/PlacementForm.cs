@@ -43,7 +43,7 @@ namespace RoomCraft
 
             contextMenu.Items.Add(changeColorMenuItem);
         }
-
+         
         private void ChangeColorMenuItem_Click(object sender, EventArgs e)
         {
             if (selectedControl != null)
