@@ -33,7 +33,7 @@ namespace RoomCraft
             // ContextMenuStrip 초기화 및 설정
             // InitializeContextMenu();
         }
-
+         
         private void InitializeContextMenu()
         {
             contextMenu = new ContextMenuStrip();
