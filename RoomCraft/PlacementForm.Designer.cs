@@ -32,7 +32,6 @@ namespace RoomCraft
             this.components = new System.ComponentModel.Container();
             this.contextMenu = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.changeColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.changeSizeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,24 +39,17 @@ namespace RoomCraft
             // 
             this.contextMenu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.changeColorToolStripMenuItem,
-            this.changeSizeToolStripMenuItem});
+            this.changeColorToolStripMenuItem});
             this.contextMenu.Name = "contextMenu";
-            this.contextMenu.Size = new System.Drawing.Size(211, 80);
+            this.contextMenu.Size = new System.Drawing.Size(174, 28);
             this.contextMenu.Text = "ContextMenu";
             // 
             // changeColorToolStripMenuItem
             // 
             this.changeColorToolStripMenuItem.Name = "changeColorToolStripMenuItem";
-            this.changeColorToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
+            this.changeColorToolStripMenuItem.Size = new System.Drawing.Size(173, 24);
             this.changeColorToolStripMenuItem.Text = "Change Color";
             this.changeColorToolStripMenuItem.Click += new System.EventHandler(this.ChangeColorMenuItem_Click);
-            // 
-            // changeSizeToolStripMenuItem
-            // 
-            this.changeSizeToolStripMenuItem.Name = "changeSizeToolStripMenuItem";
-            this.changeSizeToolStripMenuItem.Size = new System.Drawing.Size(210, 24);
-            this.changeSizeToolStripMenuItem.Text = "Change Size";
             // 
             // PlacementForm
             // 
@@ -76,6 +68,5 @@ namespace RoomCraft
 
         private System.Windows.Forms.ContextMenuStrip contextMenu;
         private System.Windows.Forms.ToolStripMenuItem changeColorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem changeSizeToolStripMenuItem;
     }
 }
