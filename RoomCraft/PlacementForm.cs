@@ -155,7 +155,7 @@ namespace RoomCraft
                 contextMenu.Show(Cursor.Position);
             }
         }
-
+         
         private void Control_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Left)
