@@ -146,7 +146,7 @@ namespace RoomCraft
                 selectedControl.Invalidate();
             }
         }
-
+         
         private void Control_MouseClick(object sender, MouseEventArgs e)
         {
             if (e.Button == MouseButtons.Right)
