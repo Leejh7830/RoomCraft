@@ -137,7 +137,7 @@ namespace RoomCraft
                 pictureBox.Image = bmp;
             }
         }
-
+         
         private void OnSizeChanged(int width, int height)
         {
             if (selectedControl != null)
