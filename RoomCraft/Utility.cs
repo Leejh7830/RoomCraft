@@ -28,6 +28,7 @@ namespace RoomCraft
             foreach (Control control in form.Controls)
             {
                 control.Visible = false;
+
             }
         }
 
